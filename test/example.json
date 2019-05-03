@@ -1,0 +1,12 @@
+[
+    {
+        "name": "zawor_1",
+        "pin": 10,
+        "type": "relay"
+    },
+    {
+        "name": "zawor_2",
+        "pin": 16,
+        "type": "relay"
+    }
+]

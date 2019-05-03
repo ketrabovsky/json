@@ -1,0 +1,13 @@
+*.exe
+*.o
+*.a
+*.cmake
+CMakeFiles/
+.vscode/
+bin/
+build/
+googletest/
+CMakeCache.txt
+Makefile
+*.swp
+*.stackdump
