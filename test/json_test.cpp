@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 
 #include "../Json.h"
-
 #include "../fileReader.h"
 
 TEST(JsonTest, JsonFromBoolean)
@@ -240,17 +239,6 @@ TEST(JsonTest, fileTest)
 {
     const std::string file_content = "[\r\n    {\r\n        \"name\": \"zawor_1\",\r\n        \"pin\": 10,\r\n        \"type\": \"relay\"\r\n    },\r\n    {\r\n        \"name\": \"zawor_2\",\r\n        \"pin\": 16,\r\n        \"type\": \"relay\"\r\n    }\r\n]";
 
-    Json::Json json = Json::Json::parse_from_string(file_content);
-
-    EXPECT_EQ("zawor_1", json[0]["name"].get_value_as_string());
-    EXPECT_EQ("zawor_2", json[1]["name"].get_value_as_string());
-    EXPECT_EQ(10, json[0]["pin"].get_value_as_int());
-    EXPECT_EQ(16, json[1]["pin"].get_value_as_int());
-}
-
-TEST(JsonTest, fromFile)
-{
-    std::string file_content = FileUtils::FileReader::read_file("example.json");
     Json::Json json = Json::Json::parse_from_string(file_content);
 
     EXPECT_EQ("zawor_1", json[0]["name"].get_value_as_string());

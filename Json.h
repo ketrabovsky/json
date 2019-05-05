@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>
 #include <iostream>
 #include <map>
 #include <memory>
@@ -14,19 +15,16 @@
  */
 namespace Json
 {
-	namespace
-    {
-        enum class Type
-        {
-            Invalid,
-            Array,
-            Null,
-            Bool,
-            String,
-            Int,
-            Object,
-        };
-    }
+	enum class Type
+	{
+		Invalid,
+		Array,
+		Null,
+		Bool,
+		String,
+		Int,
+		Object,
+	};
 
     class Json
     {

@@ -1,12 +1,22 @@
-[
-    {
-        "name": "zawor_1",
-        "pin": 10,
-        "type": "relay"
-    },
-    {
-        "name": "zawor_2",
-        "pin": 16,
-        "type": "relay"
-    }
-]
+{
+	"server": { 
+		"port": 5050
+	},
+	"peripherals" : [
+		{
+			"name": "relay_1", 
+			"pin": 15,
+			"type": "relay"
+		}, 
+		{
+			"name": "relay_2", 
+			"pin": 16,
+			"type": "relay"
+		}, 
+		{
+			"name": "therm_1",
+			"pin": 4,
+			"type": "therm"
+		}
+	] 
+}
