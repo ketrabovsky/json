@@ -68,8 +68,10 @@ namespace Json
         size_t get_size() const;
         std::string get_type() const;
         std::string get_value_as_string() const;
+        std::vector<Json> get_value_as_vector() const;
         int get_value_as_int() const;
         std::vector<std::string> get_keys() const;
+        bool check_if_key_exists(const std::string &key) const;
 
         static Json parse_from_string(const std::string &encodig);
 

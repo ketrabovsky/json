@@ -246,3 +246,24 @@ TEST(JsonTest, fileTest)
     EXPECT_EQ(10, json[0]["pin"].get_value_as_int());
     EXPECT_EQ(16, json[1]["pin"].get_value_as_int());
 }
+
+TEST(JsonTest, getValueAsVectorTest)
+{
+    const std::string file_content = "[\r\n    {\r\n        \"name\": \"zawor_1\",\r\n        \"pin\": 10,\r\n        \"type\": \"relay\"\r\n    },\r\n    {\r\n        \"name\": \"zawor_2\",\r\n        \"pin\": 16,\r\n        \"type\": \"relay\"\r\n    }\r\n]";
+
+    Json::Json json = Json::Json::parse_from_string(file_content);
+
+	const auto array = json.get_value_as_vector();
+	EXPECT_EQ(2, array.size());
+}
+
+TEST(JsonTest, CheckIfKeyExistsTest)
+{
+    const std::string file_content = "[\r\n    {\r\n        \"name\": \"zawor_1\",\r\n        \"pin\": 10,\r\n        \"type\": \"relay\"\r\n    },\r\n    {\r\n        \"name\": \"zawor_2\",\r\n        \"pin\": 16,\r\n        \"type\": \"relay\"\r\n    }\r\n]";
+
+    Json::Json json = Json::Json::parse_from_string(file_content);
+
+	EXPECT_EQ(true, json[0].check_if_key_exists("name"));
+	EXPECT_EQ(true, json[0].check_if_key_exists("pin"));
+	EXPECT_EQ(false, json[0].check_if_key_exists("doesnt_exist"));
+}

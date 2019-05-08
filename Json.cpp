@@ -360,6 +360,15 @@ namespace Json
         }
     }
 
+    std::vector<Json> Json::get_value_as_vector() const
+    {
+        switch(this->type)
+        {
+            case Type::Array: return (*this->array_value);
+            default: return {};
+        }
+    }
+
     std::string Json::get_value_as_string() const
     {
         switch(this->type)
@@ -388,6 +397,16 @@ namespace Json
 
         return ret;
     }
+
+	bool Json::check_if_key_exists(const std::string &key) const
+	{
+		if(this->type != Type::Object)
+		{
+			return false;
+		}
+
+		return this->object->end() == this->object->find(key) ? false : true;
+	}
 
     std::ostream& operator<<(std::ostream &out, const Json &json)
     {
