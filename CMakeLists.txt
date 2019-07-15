@@ -21,7 +21,7 @@ set(Sources
 )
 
 add_library(json STATIC ${Sources} ${Headers})
-target_include_directories(json PUBLIC include)
+target_include_directories(json PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 #enable_testing()
 
