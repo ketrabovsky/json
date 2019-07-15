@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "fileReader.h"
-#include "Json.h"
+#include <fileReader.h>
+#include <Json.h>
 
 int main()
 {

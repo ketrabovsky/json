@@ -5,22 +5,27 @@ project(program)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_CXX_STANDARD 11)
 
-add_subdirectory(googletest)
+set(CMAKE_SOURCE_DIRECTORY src)
+
+#add_subdirectory(googletest)
 
 set(Headers
-    fileReader.h
-    Json.h
+ include/Json.h
+ include/fileReader.h
 )
 
 set(Sources
-    main.cpp
-    Json.cpp
-    fileReader.cpp
+	${CMAKE_SOURCE_DIRECTORY}/main.cpp
+	${CMAKE_SOURCE_DIRECTORY}/Json.cpp
+	${CMAKE_SOURCE_DIRECTORY}/fileReader.cpp
 )
-enable_testing()
 
-add_library(program STATIC ${Sources} ${Headers})
+add_library(json STATIC ${Sources} ${Headers})
+target_include_directories(json PUBLIC include)
 
-add_subdirectory(test)
+#enable_testing()
 
-add_executable(programBinary ${Sources} ${Headers})
+
+#add_subdirectory(test)
+
+#add_executable(programBinary ${Sources} ${Headers})
