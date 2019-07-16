@@ -7,8 +7,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_SOURCE_DIRECTORY src)
 
-#add_subdirectory(googletest)
-
 set(Headers
  include/Json.h
  include/fileReader.h
@@ -23,9 +21,3 @@ set(Sources
 add_library(json STATIC ${Sources} ${Headers})
 target_include_directories(json PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-#enable_testing()
-
-
-#add_subdirectory(test)
-
-#add_executable(programBinary ${Sources} ${Headers})
