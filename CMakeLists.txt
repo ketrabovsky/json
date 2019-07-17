@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.7)
+#cmake_minimum_required(VERSION 3.7)
 
-project(program)
+#project(program)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_CXX_STANDARD 11)
 
-set(CMAKE_SOURCE_DIRECTORY src)
+set(SOURCE_DIRECTORY src)
 
 set(Headers
  include/Json.h
@@ -13,9 +13,9 @@ set(Headers
 )
 
 set(Sources
-	${CMAKE_SOURCE_DIRECTORY}/main.cpp
-	${CMAKE_SOURCE_DIRECTORY}/Json.cpp
-	${CMAKE_SOURCE_DIRECTORY}/fileReader.cpp
+	${SOURCE_DIRECTORY}/main.cpp
+	${SOURCE_DIRECTORY}/Json.cpp
+	${SOURCE_DIRECTORY}/fileReader.cpp
 )
 
 add_library(json STATIC ${Sources} ${Headers})
